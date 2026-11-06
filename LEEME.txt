@@ -1,0 +1,64 @@
+GLOBAL MARKET - Tienda para clientes + Panel del encargado
+===========================================================
+
+ARCHIVOS
+  index.html   Página de CLIENTES (catálogo, buscador, carrito, pedido por WhatsApp)
+  admin.html   Página del ENCARGADO (ingreso + panel para editar todo)
+
+CÓMO ABRIRLO
+  Opción rápida: doble clic en index.html (tienda) o admin.html (panel).
+  Opción recomendada: VS Code > clic derecho en index.html > "Open with Live Server".
+  Los enlaces entre ambas páginas funcionan ("Acceso del encargado" / "Ver tienda").
+  Mantén las carpetas css, js e img junto a los .html.
+
+ENTRAR AL PANEL
+  Correo:      admin@globalmarket.com
+  Contraseña:  123456
+  Aparecen ya rellenados: solo presiona "Iniciar sesión".
+  Luego crea tu contraseña en Ajustes > Cuenta de acceso (mínimo 6 caracteres).
+  Si no puedes entrar: "¿No puedes entrar? Restablecer acceso" (no borra productos).
+
+QUÉ PUEDE EDITAR EL ENCARGADO (todo se ve al instante en la tienda)
+  Productos y stock ..... crear, editar, eliminar, foto, precio, stock, categoría
+  Promociones ........... descuentos % a toda la tienda o a productos elegidos, con fecha
+  Categorías ............ crear, renombrar, eliminar (organizan el catálogo y el menú)
+  Portada ............... título, texto y las 2 fotos del inicio
+  Ajustes ............... nombre, WhatsApp, moneda, correo, contraseña, copia de seguridad
+
+EFECTO 3D
+  - Las tarjetas de producto se inclinan con el mouse y la foto "sale" de la tarjeta.
+  - Al tocar un producto se abre un visor 3D: la foto se ve como una pieza con grosor
+    que gira sola y se puede arrastrar para verla desde cualquier ángulo.
+  - La portada tiene fotos flotantes y el logo girando en 3D.
+  Consejo: usa fotos nítidas con fondo limpio (los PNG sin fondo quedan aún mejor).
+
+PERSONALIZAR EL DISEÑO (Sass, como en la guía)
+  1) npm install
+  2) Edita scss/custom.scss (colores, tipografía y bordes están arriba, antes del @import)
+  3) npm run build   -> compila Sass y genera css/reducido.css (solo las clases que usas)
+  Las páginas usan css/reducido.css. Si agregas clases nuevas en el HTML/JS, repite el paso 3.
+
+IMPORTANTE
+  - Los datos se guardan en el navegador de quien los carga (localStorage). Para que todos los
+    clientes vean lo mismo desde sus celulares hace falta una base de datos en línea.
+    Cuando quieras añadir contraseña real y base de datos, el punto de conexión es js/data.js.
+  - La contraseña se revisa dentro de la propia página: ordena el acceso pero no es seguridad real.
+  - Cambia el WhatsApp de ejemplo (51999999999) por el real en Ajustes.
+
+ASISTENTE VIRTUAL (burbuja roja abajo a la derecha)
+  Responde dudas como un consultor: productos y precios (con botón "Ver en 3D" y "Agregar"),
+  promociones, categorías y cómo comprar. Si no sabe, te deriva a un asesor por WhatsApp.
+  Sus respuestas salen de tus datos y de las "Preguntas frecuentes" que escribes en
+  Panel > Ajustes (formato: Pregunta | Respuesta). También puedes poner dirección y horario.
+
+PUBLICAR PARA QUE SALGA EN GOOGLE
+  1) Sube la carpeta a un hosting gratis con link público (ej. Vercel: vercel.com > Add New >
+     Project > sube la carpeta, o Netlify Drop: app.netlify.com/drop). Te dan una URL https.
+  2) Reemplaza TU-DOMINIO.com por esa URL (o tu dominio) en index.html, robots.txt y sitemap.xml.
+  3) Entra a https://search.google.com/search-console , agrega tu URL, verifícala y envía
+     el sitemap (https://TU-DOMINIO.com/sitemap.xml). Luego "Inspección de URL" > "Solicitar indexación".
+  4) Google tarda de unos días a un par de semanas en mostrarla. Busca tu nombre exacto para verla.
+  Ya incluye: título, descripción, etiquetas para compartir en redes, datos estructurados,
+  robots.txt y sitemap.xml. El panel (admin.html) queda oculto para Google a propósito.
+  Nota: los productos que cargas viven en tu navegador, así que Google indexa la portada y la
+  información fija; para que cada producto aparezca en Google hace falta la base de datos en línea.

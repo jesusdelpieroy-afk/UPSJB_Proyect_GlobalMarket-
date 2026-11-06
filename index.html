@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Global Market | Hogar, organizadores y accesorios</title>
+  <meta name="description" content="Global Market: hogar, organizadores, accesorios y más. Haz tu pedido por WhatsApp.">
+  <meta name="theme-color" content="#D2141B">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://TU-DOMINIO.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:site_name" content="Global Market">
+  <meta property="og:title" content="Global Market | Hogar, organizadores y accesorios">
+  <meta property="og:description" content="Catálogo online de Global Market. Elige tus productos y haz tu pedido por WhatsApp.">
+  <meta property="og:url" content="https://TU-DOMINIO.com/">
+  <meta property="og:image" content="https://TU-DOMINIO.com/img/local-1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Store","name":"Global Market","description":"Tienda de hogar, organizadores y accesorios. Pedidos por WhatsApp.","url":"https://TU-DOMINIO.com/","logo":"https://TU-DOMINIO.com/img/logo.png","image":"https://TU-DOMINIO.com/img/local-1.jpg","priceRange":"$"}
+  </script>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/reducido.css">
+</head>
+<body>
+
+<!-- ============ Barra lateral ============ -->
+<aside class="gm-sidebar" id="sidebar" aria-label="Menú de la tienda">
+  <a class="gm-brand" href="index.html" aria-label="Global Market, inicio">
+    <img src="img/logo.png" alt="Logo de Global Market">
+    <span><strong id="brandName">Global Market</strong><small id="brandTag">Hogar, organizadores y accesorios</small></span>
+  </a>
+
+  <nav class="gm-nav" id="sideNav">
+    <div class="gm-nav-title">Principal</div>
+    <a class="gm-link active" href="#inicio" data-nav="inicio"><i class="bi bi-house-door"></i> Inicio</a>
+    <a class="gm-link" href="#promos" data-nav="promos" id="navPromos" hidden><i class="bi bi-lightning-charge"></i> Promociones</a>
+    <a class="gm-link" href="#como-comprar" data-nav="como"><i class="bi bi-bag-check"></i> Cómo comprar</a>
+    <a class="gm-link" href="#faq" data-nav="faq" id="navFaq"><i class="bi bi-question-circle"></i> Preguntas frecuentes</a>
+
+    <div class="gm-nav-title">Categorías</div>
+    <div id="catNav"></div>
+  </nav>
+
+  <div class="gm-user-wrap">
+    <div class="gm-user-menu" id="userMenu" role="menu">
+      <div class="head">
+        <div class="gm-avatar lg">GM</div>
+        <div><b id="menuName">Global Market</b><small>Atención por WhatsApp</small></div>
+      </div>
+      <a class="mi" id="menuWa" href="#" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Escribir por WhatsApp</a>
+      <a class="mi" href="#como-comprar"><i class="bi bi-question-circle"></i> Cómo comprar</a>
+      <a class="mi" href="admin.html"><i class="bi bi-shield-lock"></i> Acceso del encargado</a>
+    </div>
+    <button class="gm-user" id="userBtn" type="button" aria-expanded="false" aria-haspopup="true">
+      <span class="gm-avatar">GM</span>
+      <span class="meta"><b id="userName">Global Market</b><small>Atención al cliente</small></span>
+      <i class="bi bi-chevron-up chev"></i>
+    </button>
+  </div>
+</aside>
+<div class="gm-overlay" id="sbOverlay"></div>
+
+<!-- ============ Contenido ============ -->
+<div class="gm-main">
+  <header class="gm-topbar">
+    <button class="gm-icon-btn" id="burger" type="button" aria-label="Abrir o cerrar menú"><i class="bi bi-list"></i></button>
+    <h1 class="gm-title" id="pageTitle">Inicio</h1>
+    <div class="ms-auto d-flex align-items-center gap-2">
+      <div class="position-relative d-none d-sm-block">
+        <i class="bi bi-search position-absolute top-50 translate-middle-y ms-3 text-secondary" style="font-size:.85rem"></i>
+        <label class="sr-only" for="q">Buscar producto</label>
+        <input id="q" type="search" class="form-control rounded-pill ps-5 bg-light border-0" placeholder="Buscar producto" style="width:260px">
+      </div>
+      <button class="gm-icon-btn" id="openCart" type="button" aria-label="Abrir carrito" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas">
+        <i class="bi bi-bag"></i><span class="gm-badge" id="cartCount" data-n="0"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="gm-subbar">
+    <span id="welcome">Bienvenido a Global Market</span>
+    <nav aria-label="Ruta">
+      <ol class="breadcrumb" id="crumbs">
+        <li class="breadcrumb-item"><a href="#inicio">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Catálogo</li>
+      </ol>
+    </nav>
+  </div>
+
+  <main class="gm-content">
+    <!-- Portada 3D -->
+    <section class="hero3d" id="inicio">
+      <div>
+        <span class="eyebrow"><i class="bi bi-stars"></i> Tienda online</span>
+        <h1 id="heroTitle">Todo para tu hogar en un solo lugar</h1>
+        <p class="lead" id="heroText">Elige lo que necesitas del catálogo y haz tu pedido por WhatsApp.</p>
+        <div class="d-flex flex-wrap gap-2 mt-4">
+          <a class="btn btn-yellow" href="#catalogo">Ver productos <i class="bi bi-arrow-right ms-1"></i></a>
+          <a class="btn btn-glass" href="#como-comprar">Cómo comprar</a>
+        </div>
+      </div>
+      <div class="hero-stage" id="heroStage" aria-hidden="true">
+        <div class="hero-scene">
+          <div class="hero-photo p2"><img id="heroImg2" src="img/local-2.jpg" alt=""></div>
+          <div class="hero-photo p1"><img id="heroImg1" src="img/local-1.jpg" alt=""></div>
+          <div class="coin"><div class="face"><img src="img/logo.png" alt=""></div><div class="face back"><img src="img/logo.png" alt=""></div></div>
+          <span class="chip3d c1"><i class="bi bi-whatsapp"></i> Pedido por WhatsApp</span>
+          <span class="chip3d c2"><i class="bi bi-patch-check-fill"></i> Stock confirmado</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="perks" aria-label="Ventajas">
+      <div class="perk"><div class="ico"><i class="bi bi-grid-3x3-gap"></i></div><div><b>Variedad para todo</b><span>Hogar, organizadores, accesorios y más.</span></div></div>
+      <div class="perk"><div class="ico"><i class="bi bi-shield-check"></i></div><div><b>Compra con confianza</b><span>Confirmamos disponibilidad antes del pago.</span></div></div>
+      <div class="perk"><div class="ico"><i class="bi bi-chat-dots"></i></div><div><b>Atención por WhatsApp</b><span>Te ayudamos con tu elección y la entrega.</span></div></div>
+    </section>
+
+    <section class="band reveal" id="band" aria-label="Cifras de la tienda">
+      <div><b data-count>0</b><span>Productos</span></div>
+      <div><b data-count>0</b><span>Categorías</span></div>
+      <div><b data-count>0</b><span>Promociones activas</span></div>
+      <div><b><i class="bi bi-whatsapp"></i></b><span>Atención directa</span></div>
+    </section>
+
+    <!-- Promociones -->
+    <section id="promos" hidden aria-label="Promociones">
+      <div class="sec-head"><div><h2>Promociones</h2><p>Aprovecha los descuentos vigentes.</p></div></div>
+      <div class="promo-grid" id="promoGrid"></div>
+    </section>
+
+    <!-- Catálogo -->
+    <section id="catalogo">
+      <div class="sec-head">
+        <div><h2>Nuestros productos</h2><p id="catSub">Toca un producto para verlo en 3D.</p></div>
+      </div>
+      <div class="d-sm-none mb-3">
+        <label class="sr-only" for="q2">Buscar producto</label>
+        <input id="q2" type="search" class="form-control rounded-pill" placeholder="Buscar producto">
+      </div>
+      <div class="cat-chips" id="chips" role="group" aria-label="Categorías"></div>
+      <div id="catalog" aria-live="polite"></div>
+    </section>
+
+    <!-- Cómo comprar -->
+    <section id="como-comprar" class="mt-5">
+      <div class="how">
+        <div class="txt">
+          <h2>Cómo comprar</h2>
+          <ol>
+            <li>Elige tus productos en el catálogo y agrégalos al carrito.</li>
+            <li>Envía tu pedido por WhatsApp con un solo botón.</li>
+            <li>Coordina el pago y la entrega con la tienda.</li>
+          </ol>
+        </div>
+        <div class="ph"><img src="img/local-2.jpg" alt="Interior de la tienda Global Market" loading="lazy"></div>
+      </div>
+    </section>
+
+    <section id="faq" class="mt-5 reveal" hidden aria-label="Preguntas frecuentes">
+      <div class="sec-head"><div><h2>Preguntas frecuentes</h2><p>¿Otra duda? Pregúntale a nuestro asistente.</p></div></div>
+      <div class="accordion gm-accordion" id="faqList"></div>
+    </section>
+
+    <footer class="gm-foot">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="d-flex align-items-center gap-2 mb-2"><img src="img/logo.png" alt="Global Market"><b id="footBrand">Global Market</b></div>
+          <p id="footTag" class="mb-0">Hogar, organizadores y accesorios.</p>
+        </div>
+        <div class="col-6 col-lg-3"><h5>Explora</h5><a href="#inicio">Inicio</a><a href="#catalogo">Catálogo</a><a href="#como-comprar">Cómo comprar</a><a href="#faq">Preguntas frecuentes</a></div>
+        <div class="col-6 col-lg-4"><h5>Contacto</h5><a id="footWa" href="#" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Escríbenos por WhatsApp</a><span id="footAddr" hidden></span><span id="footHours" hidden></span><a href="admin.html"><i class="bi bi-shield-lock"></i> Acceso del encargado</a></div>
+      </div>
+      <div class="copy" id="footName"></div>
+    </footer>
+  </main>
+</div>
+
+<!-- ============ Detalle 3D del producto ============ -->
+<div class="modal fade" id="prodModal" tabindex="-1" aria-labelledby="pmName" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content gm-modal">
+      <div class="modal-body p-3 p-md-4">
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" style="z-index:5" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="row g-4 align-items-center">
+          <div class="col-md-6">
+            <div class="viewer" id="viewer"><div class="plate" id="plate"></div><span class="hint"><i class="bi bi-arrow-repeat"></i> Arrastra para girar</span></div>
+          </div>
+          <div class="col-md-6">
+            <span class="small fw-bold text-uppercase text-primary" id="pmCat" style="letter-spacing:.1em"></span>
+            <h2 class="h4 fw-bold mt-1" id="pmName"></h2>
+            <p class="text-secondary" id="pmDesc"></p>
+            <div class="d-flex align-items-baseline gap-2 mb-1"><span class="h3 fw-bolder mb-0" id="pmPrice"></span><s class="text-secondary" id="pmOld"></s><span class="badge text-bg-primary" id="pmOff"></span></div>
+            <p class="small text-secondary" id="pmStock"></p>
+            <div class="d-grid gap-2 mt-3">
+              <button class="btn btn-primary btn-lg" id="pmAdd" type="button"><i class="bi bi-bag-plus me-1"></i> Agregar al carrito</button>
+              <a class="btn btn-wa" id="pmWa" href="#" target="_blank" rel="noopener"><i class="bi bi-whatsapp me-1"></i> Preguntar por WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Carrito ============ -->
+<aside class="offcanvas offcanvas-end gm-cart" tabindex="-1" id="cartCanvas" aria-labelledby="cartTitle">
+  <div class="offcanvas-header border-bottom">
+    <h2 class="offcanvas-title h5 fw-bold" id="cartTitle"><i class="bi bi-bag me-2"></i>Tu carrito</h2>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
+  </div>
+  <div class="offcanvas-body" id="cartBody"></div>
+  <div class="p-3 border-top bg-light">
+    <div class="d-flex justify-content-between fw-bold fs-5 mb-3"><span>Total</span><span id="cartTotal">S/ 0.00</span></div>
+    <input id="custName" type="text" class="form-control mb-2" placeholder="Tu nombre (opcional)" autocomplete="name">
+    <button class="btn btn-wa w-100 py-2" id="sendWa" type="button"><i class="bi bi-whatsapp me-1"></i> Enviar pedido por WhatsApp</button>
+    <button class="btn btn-link text-secondary btn-sm w-100 mt-1" id="clearCart" type="button">Vaciar carrito</button>
+  </div>
+</aside>
+
+<!-- ============ Asistente virtual ============ -->
+<span class="bot-tip" id="botTip">¿Dudas? Pregúntame 👋</span>
+<button class="bot-fab" id="botFab" type="button" aria-label="Abrir asistente virtual" aria-expanded="false"><i class="bi bi-chat-dots-fill"></i><span class="pulse"></span></button>
+<section class="bot" id="bot" aria-label="Asistente virtual">
+  <header><img src="img/logo.png" alt=""><div><b id="botName">Asistente Global Market</b><small><i class="dot"></i> En línea</small></div><button id="botClose" type="button" aria-label="Cerrar asistente"><i class="bi bi-x-lg"></i></button></header>
+  <div class="bot-msgs" id="botMsgs" aria-live="polite"></div>
+  <div class="bot-chips" id="botChips"></div>
+  <form id="botForm" autocomplete="off"><label class="sr-only" for="botInput">Escribe tu duda</label><input id="botInput" placeholder="Escribe tu duda…" maxlength="120"><button type="submit" aria-label="Enviar"><i class="bi bi-send-fill"></i></button></form>
+</section>
+
+<div class="gm-toast" id="toast" role="status"></div>
+
+<script src="js/vendor/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+</body>
+</html>
