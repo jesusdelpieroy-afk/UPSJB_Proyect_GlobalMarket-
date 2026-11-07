@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('order_id')->constrained('orders')->cascadeOnDelete();
+            $table->string('metodoPago', 50);
+            $table->decimal('monto', 10, 2);
+            $table->string('comprobante', 255)->nullable();
+            $table->dateTime('fecha');
+            $table->string('estado', 30)->default('pendiente');
             $table->timestamps();
         });
     }

@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('customer_id')->constrained('customers')->restrictOnDelete();
+            $table->foreignId('user_id')->constrained('users')->restrictOnDelete();
+            $table->string('codigoPedido', 20)->unique();
+            $table->dateTime('fecha');
+            $table->decimal('total', 10, 2)->default(0);
+            $table->string('estado', 30)->default('pendiente');
             $table->timestamps();
         });
     }

@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('pickups', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('order_id')->constrained('orders')->cascadeOnDelete();
+            $table->date('fecha');
+            $table->string('hora', 20);
+            $table->string('estado', 30)->default('programado');
+            $table->string('responsable', 100);
             $table->timestamps();
         });
     }
