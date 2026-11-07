@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('catalogues', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id')->constrained('categories')->cascadeOnDelete();
+            $table->string('nombre', 100);
+            $table->text('descripcion')->nullable();
             $table->timestamps();
         });
     }

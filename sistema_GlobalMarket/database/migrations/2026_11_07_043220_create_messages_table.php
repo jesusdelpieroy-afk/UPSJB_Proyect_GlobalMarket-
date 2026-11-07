@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('customer_id')->constrained('customers')->cascadeOnDelete();
+            $table->string('nombreCliente', 100);
+            $table->string('telefono', 20)->nullable();
+            $table->string('correo', 100);
+            $table->text('contenido');
+            $table->dateTime('fecha');
+            $table->string('estado', 30)->default('pendiente');
             $table->timestamps();
         });
     }
