@@ -8,20 +8,16 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('productos', function (Blueprint $table) {
+        Schema::create('categorias', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('categoria_id')->constrained()->restrictOnDelete();
-            $table->foreignId('almacen_id')->constrained('almacenes')->restrictOnDelete();
-            $table->string('nombre', 150);
-            $table->decimal('precio', 10, 2); // Decimal estricto para dinero
-            $table->unsignedInteger('stock')->default(0);
+            $table->string('nombre', 80)->unique();
+            $table->string('descripcion')->nullable();
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('productos');
+        Schema::dropIfExists('categorias');
     }
 };
-

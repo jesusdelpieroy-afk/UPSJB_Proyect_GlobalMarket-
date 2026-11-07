@@ -8,19 +8,19 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('ventas', function (Blueprint $table) {
+        Schema::create('productos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->restrictOnDelete();
-            $table->string('cliente_nombre', 150)->nullable(); // Opcional por si es venta rápida sin registrar cliente completo
-            $table->dateTime('fecha');
-            $table->decimal('total', 10, 2)->default(0);
-            $table->decimal('igv', 10, 2)->default(0);
+            $table->foreignId('categoria_id')->constrained()->restrictOnDelete();
+            $table->foreignId('almacen_id')->constrained('almacenes')->restrictOnDelete();
+            $table->string('nombre', 150);
+            $table->decimal('precio', 10, 2); // Decimal estricto para evitar pérdidas monetarias
+            $table->unsignedInteger('stock')->default(0);
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('ventas');
+        Schema::dropIfExists('productos');
     }
 };

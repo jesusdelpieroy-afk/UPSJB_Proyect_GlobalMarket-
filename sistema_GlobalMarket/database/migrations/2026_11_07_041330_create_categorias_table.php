@@ -8,19 +8,19 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('detalle_ventas', function (Blueprint $table) {
+        Schema::create('ventas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('venta_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('producto_id')->constrained('productos')->restrictOnDelete();
-            $table->unsignedInteger('cantidad');
-            $table->decimal('precio_unitario', 10, 2);
-            $table->decimal('subtotal', 10, 2);
+            $table->foreignId('user_id')->constrained()->restrictOnDelete();
+            $table->string('cliente_nombre', 150)->nullable(); // Venta rápida sin registrar cliente completo
+            $table->dateTime('fecha');
+            $table->decimal('total', 10, 2)->default(0);
+            $table->decimal('igv', 10, 2)->default(0);
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('detalle_ventas');
+        Schema::dropIfExists('ventas');
     }
 };
