@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Memoria microSD 64 GB">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#1e3a8a"/></linearGradient>
+<radialGradient id="h" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
+<rect width="600" height="600" fill="url(#g)"/><rect width="600" height="600" fill="url(#h)"/>
+<circle cx="300" cy="300" r="210" fill="#fff" fill-opacity=".88"/>
+<circle cx="300" cy="300" r="210" fill="none" stroke="#fff" stroke-width="10" stroke-opacity=".5"/>
+<text x="300" y="300" font-size="230" text-anchor="middle" dominant-baseline="central" font-family="'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif">🗂️</text>
+</svg>
